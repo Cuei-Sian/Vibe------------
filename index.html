@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>狗狗歲數計算機</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container" role="main">
+      <h1>🐶 狗狗歲數計算機</h1>
+
+      <label for="birth">請輸入狗狗的出生日期</label>
+      <input id="birth" type="date" aria-label="出生日期" />
+
+      <label for="model">請選擇換算模式</label>
+      <select id="model" aria-label="換算模式">
+        <option value="simple">大眾簡易版（1→15, 2→24, 之後每年+5）</option>
+        <option value="dna">DNA 甲基化模型（Wang et al. 2020）</option>
+        <option value="size">依體型換算（AAHA 參考）</option>
+      </select>
+
+      <div id="sizeBlock" class="hidden">
+        <label for="size">請選擇狗狗體型</label>
+        <select id="size" aria-label="狗狗體型">
+          <option value="small">小型犬</option>
+          <option value="medium">中型犬</option>
+          <option value="large">大型犬</option>
+        </select>
+      </div>
+
+      <button id="calcBtn" type="button">開始計算</button>
+
+      <section id="result" class="result" aria-live="polite"></section>
+
+      <footer class="note">
+        <p>
+          說明：大眾簡易版為常見簡化換算；DNA
+          甲基化為近年學術模型；體型版為臨床常用簡化倍數。
+        </p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
